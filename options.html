@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>簡轉繁 - 設定</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #eee;
+      padding: 40px;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #f39c12;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+    
+    header p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .card h2 {
+      font-size: 14px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    
+    .option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .option-row:last-child {
+      border-bottom: none;
+    }
+    
+    .option-info h3 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #eee;
+      margin-bottom: 4px;
+    }
+    
+    .option-info p {
+      font-size: 13px;
+      color: #666;
+    }
+    
+    /* Toggle Switch */
+    .toggle {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #333;
+      transition: 0.3s;
+      border-radius: 28px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background: #f39c12;
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+    
+    .saved-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #2ecc71;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .saved-msg.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>簡 → 繁</h1>
+      <p>擴充套件設定</p>
+    </header>
+    
+    <div class="card">
+      <h2>一般設定</h2>
+      
+      <div class="option-row">
+        <div class="option-info">
+          <h3>自動轉換</h3>
+          <p>開啟網頁時自動將簡體轉換為繁體</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="autoConvert">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="saved-msg" id="savedMsg">✓ 已儲存</div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
+
