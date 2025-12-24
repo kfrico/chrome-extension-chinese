@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "簡轉繁",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "將網頁簡體中文轉換為繁體中文",
   "permissions": ["storage", "activeTab", "scripting"],
   "action": {
